@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - RENTMANIA</title>
+    <link rel="stylesheet" href="css/homepage1 (2).css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <a href="homepage.html">RENTMANIA</a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container" style="max-width: 600px; margin: 3rem auto; padding: 2rem;">
+        <h2 class="section__header">User Registration</h2>
+        <form class="auth-form" id="registerForm">
+            <div class="input__group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="firstName" placeholder="Enter your first name" required>
+            </div>
+            <div class="input__group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="lastName" placeholder="Enter your last name" required>
+            </div>
+            
+            <div class="input__group">
+                <label>Role</label>
+                <div class="role-selection" style="display: flex; gap: 1rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="role" value="seller" required> Seller
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="role" value="renter" required> Renter
+                    </label>
+                </div>
+            </div>
+            
+            <div class="input__group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required 
+                       minlength="10" maxlength="10" oninput="validateMobileNumber(event)">
+                <div id="mobile-error" class="error-message" style="color: red; font-size: 0.8rem; display: none;">
+                    Mobile number must contain only numbers.
+                </div>
+            </div>
+            
+            <div class="input__group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="input__group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+            </div>
+            
+            <div class="input__group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            
+            <div class="input__group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your address" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            
+            <div class="input__group">
+                <label for="kyc-proof">KYC Proof (Aadhaar, PAN, etc.)</label>
+                <input type="file" id="kyc-proof" name="kycProof" accept=".pdf,.jpg,.png" required
+                       style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            
+            <div class="input__group">
+                <label for="kyc-image">Upload KYC Image (Optional)</label>
+                <input type="file" id="kyc-image" name="kycImage" accept="image/*"
+                       style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Register</button>
+        </form>
+        <div style="text-align: center; margin-top: 1rem;">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/homepage2.js"></script>
+    
+    <script>
+        // Validate mobile number input
+        function validateMobileNumber(event) {
+            const mobileInput = event.target;
+            const mobileError = document.getElementById('mobile-error');
+            const mobileValue = mobileInput.value;
+
+            // Allow only numbers
+            mobileInput.value = mobileValue.replace(/\D/g, '');
+
+            // Show error if non-numeric characters are entered
+            if (/\D/.test(mobileValue)) {
+                mobileError.style.display = 'block';
+            } else {
+                mobileError.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

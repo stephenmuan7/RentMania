@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/homepage1.css">
+  <title>All Products - RENTMANIA</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="homepage.html">RENTMANIA</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="products.html">All Products</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <div class="nav__btn">
+        <button class="btn">Get Started</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Categories Navigation -->
+    <nav class="categories-nav">
+      <a href="#">Digital Cameras</a>
+      <a href="#">Refrigerators</a>
+      <a href="#">Microwaves</a>
+      <a href="#">VR Headsets</a>
+      <a href="#">Washing Machines</a>
+      <a href="#">Air Conditioners</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+      <button><i class="ri-search-line"></i></button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Product cards will be generated here -->
+      <!-- Example product card (you can duplicate this for each product) -->
+      <div class="product-card">
+        <img src="assets/image/CAMER.webp" alt="Canon EOS R6">
+        <div class="details">
+          <h3>Canon EOS R6</h3>
+          <p>Professional mirrorless camera with 20MP sensor</p>
+          <div class="price">$195/month</div>
+          <button class="btn">Rent Now</button>
+        </div>
+      </div>
+      
+      <!-- Add more product cards here following the same structure -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="section__container footer__container">
+      <!-- Your existing footer content from homepage.html -->
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">Installation Manual</a></li>
+          <li><a href="#">Release Note</a></li>
+          <li><a href="#">Community Help</a></li>
+        </ul>
+      </div>
+      <!-- Other footer columns... -->
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="js/homepage2.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
